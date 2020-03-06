@@ -1,5 +1,11 @@
 import UIKit
 
+// sorting algorithms: O(n^2), O(n log n)
+// O(n^2) is worst than O(n log n)
+
+// slower: O(n ^ n) - bubble sort, insertion sort
+// faster: O(n log n) - merge sort - quicksort 
+
 // insertion sort
 // runtime: O(n^2)
 // space: O(1) because sorts in place
@@ -11,7 +17,7 @@ import UIKit
 //https://github.com/raywenderlich/swift-algorithm-club
 
 func insertionSort(_ arr: inout [Int]) {
-    
+    guard arr.count >= 2 else { return } // protecting from empty values
     for current in 1..<arr.count {
         for j in (1...current).reversed() {
             if arr[j] < arr[j - 1] {
